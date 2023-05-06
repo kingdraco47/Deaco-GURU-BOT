@@ -267,7 +267,7 @@ export async function handler(chatUpdate) {
                     lastweekly: 0,
                     lastmonthly: 0,
                     lastbunga: 0,
-                    premium: false,
+                    premium: true,
                     premiumTime: 0,
                     limitjoin: 0,
                 }
@@ -282,13 +282,13 @@ export async function handler(chatUpdate) {
                 if (!('detect' in chat))
                     chat.detect = false
                 if (!('sWelcome' in chat))
-                    chat.sWelcome = ''
+                    chat.sWelcome = 'true'
                 if (!('sBye' in chat))
-                    chat.sBye = ''
+                    chat.sBye = 'true'
                 if (!('sPromote' in chat))
-                    chat.sPromote = ''
+                    chat.sPromote = 'true'
                 if (!('sDemote' in chat))
-                    chat.sDemote = ''
+                    chat.sDemote = 'true'
                 if (!('delete' in chat))
                     chat.delete = true
                 if (!('antiLink' in chat))
@@ -302,13 +302,13 @@ export async function handler(chatUpdate) {
                 if (!('autosticker' in chat))
                     chat.autosticker = false
                 if (!('premium' in chat))
-                    chat.premium = false
+                    chat.premium = true
                  if (!('onlyenglish' in chat))
                     chat.onlyLatinos = false
                 if (!('premiumTime' in chat)) 
-                    chat.premiumTime = false
+                    chat.premiumTime = true
                 if (!('premnsfw' in chat))
-                    chat.premnsfw = false
+                    chat.premnsfw = true
                 if (!isNumber(chat.expired))
                     chat.expired = 0
             } else
@@ -316,10 +316,10 @@ export async function handler(chatUpdate) {
                     isBanned: false,
                     welcome: true,
                     detect: false,
-                    sWelcome: '',
-                    sBye: '',
-                    sPromote: '',
-                    sDemote: '',
+                    sWelcome: 'true',
+                    sBye: 'true',
+                    sPromote: 'true',
+                    sDemote: 'true',
                     delete: true,
                     antiLink: false,
                     viewonce: false,
@@ -328,9 +328,9 @@ export async function handler(chatUpdate) {
                     expired: 0,
                     onlyenglish: false,
                     autosticker: false,
-                    premium: false,
-	            premiumTime: false,
-                    premnsfw: false, 
+                    premium: true,
+	            premiumTime: true,
+                    premnsfw: true, 
                 }
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
@@ -345,7 +345,7 @@ export async function handler(chatUpdate) {
                 self: false,
                 autoread: false,
                 autorestart: false,
-                anticall: true,
+                anticall: false,
                 restartDB: 0,
                 restrict: false
             }
@@ -782,9 +782,9 @@ TO DEACTIVE , PRESS
 global.dfail = (type, m, conn) => {
     let msg = {
         rowner: '*ᴏɴʟʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* • This command can only be used by the *Creator of the bot*',
-        owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • This command can only be used by the *Bot Owner',
+        owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • This command can only be used by the *Bot Owner*',
         mods: '*ᴏɴʟʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ* •This function is only for *For Bot moderators*',
-        premium: '*ᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ* • This command is for *Premium members only',
+        premium: '*ᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ* • This command is for *Premium members only*',
         group: '*ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • This command can only be used in groups',
         private: '*ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • This command can only be used in the *private chat of the Bot*',
         admin: '*ᴏɴʟʏ ᴀᴅᴍɪɴ* • This command is only for *Group Admins*',
